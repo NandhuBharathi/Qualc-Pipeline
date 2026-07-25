@@ -1,296 +1,372 @@
-# 🧠 QualcLM
+# Qualc-Pipeline 🚀
 
-## A Custom 250M Parameter Language Model Framework
+### Dataset, AI Training, Evaluation & Deployment Pipeline
 
-QualcLM is a research-oriented Large Language Model (LLM) project focused on building a compact, efficient, and customizable AI foundation model.
+Qualc-Pipeline is an end-to-end Artificial Intelligence development pipeline created for building, training, evaluating, and deploying custom Large Language Models.
 
-The goal of QualcLM is to create a lightweight language model capable of understanding and generating high-quality responses across multiple domains.
-
----
-
-# 🚀 Project Vision
-
-Modern Large Language Models require huge computational resources and infrastructure.
-
-QualcLM focuses on developing a smaller but efficient foundation model that can be:
-
-- Trained independently
-- Fine-tuned for specific domains
-- Deployed on custom platforms
-- Extended with additional capabilities
-
-The project aims to build an AI system with strong foundations in:
-
-- Natural Language Understanding
-- Code Generation
-- Mathematical Reasoning
-- Scientific Knowledge
-- Educational Assistance
+This project is the foundation pipeline for **Qualc-LM**, a custom multilingual Language Model.
 
 ---
 
-# 🧠 Model Architecture
+## 🧠 Qualc-LM Vision
 
-QualcLM uses a modern Decoder-only Transformer architecture inspired by recent LLM designs.
+Qualc-LM is designed to understand and generate multiple domains:
 
-Implemented components:
+- Tamil Language
+- English Language
+- Tanglish
+- Mathematics
+- Programming & Coding
+- Science
+- Social Science
+- General Knowledge
 
-- Decoder-only Transformer
+The goal is to build a domain-flexible AI system using a clean dataset and scalable training pipeline.
+
+---
+
+# 🏗️ AI Development Pipeline
+
+```
+Data Collection
+        |
+        ↓
+Dataset Cleaning
+        |
+        ↓
+Data Filtering
+        |
+        ↓
+Tokenizer Training
+        |
+        ↓
+Dataset Processing
+        |
+        ↓
+Model Training
+        |
+        ↓
+Checkpoint Saving
+        |
+        ↓
+Evaluation
+        |
+        ↓
+Deployment
+```
+
+---
+
+# 📂 Project Structure
+
+```
+Qualc-Pipeline/
+
+├── datasets/
+│   ├── raw/
+│   ├── cleaned/
+│   └── processed/
+│
+├── tokenizer/
+│   └── tokenizer.py
+│
+├── preprocessing/
+│   ├── cleaner.py
+│   ├── filter.py
+│   └── formatter.py
+│
+├── training/
+│   ├── train.py
+│   ├── model.py
+│   └── checkpoint.py
+│
+├── evaluation/
+│   └── evaluate.py
+│
+├── deployment/
+│   └── inference.py
+│
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# 🤖 Model Architecture
+
+Initial Target Model:
+
+```
+Model Name:
+Qualc-LM
+
+Parameters:
+250 Million
+
+Architecture:
+Transformer Decoder
+```
+
+Features:
+
 - RMSNorm
 - Rotary Position Embedding (RoPE)
 - Grouped Query Attention (GQA)
 - SwiGLU Feed Forward Network
-- Weight Tying
-- KV Cache Optimization
+- KV Cache
 - Mixed Precision Training
-- HuggingFace Compatible Model Format
+- HuggingFace Compatibility
 
 ---
 
-# 📊 Target Model Configuration
+# 🔤 Multilingual Tokenizer
 
-| Component | Specification |
-|---|---|
-| Model Name | QualcLM |
-| Target Size | 250M Parameters |
-| Architecture | Decoder Transformer |
-| Vocabulary Size | 64K Tokens |
-| Context Length | 512+ Tokens |
-| Framework | PyTorch |
-| Training Precision | FP16 / BF16 |
-| Model Format | SafeTensors Compatible |
-
----
-
-# 🌐 Language & Domain Support
-
-QualcLM is designed to support:
-
-## Native Training Languages
-
-- English
-- Tamil
-- Tanglish
-
-## Technical Domains
-
-- Programming Languages
-- Mathematics
-- Science
-- General Knowledge
-- Educational Content
-- Structured Data
-
-Additional languages and domains can be added through:
-
-- Continued Pretraining
-- Domain Fine-tuning
-- Dataset Expansion
-
----
-
-# 📁 Project Structure
+Qualc-LM uses a custom tokenizer pipeline supporting:
 
 ```
-QualcLM/
-
-├── configs/
-│   ├── model_config.py
-│   └── train_config.py
-│
-├── tokenizer/
-│   └── tokenizer_loader.py
-│
-├── model/
-│   ├── attention.py
-│   ├── rope.py
-│   ├── rmsnorm.py
-│   ├── feedforward.py
-│   ├── transformer_block.py
-│   └── qualclm.py
-│
-├── trainer/
-│   ├── trainer.py
-│   ├── optimizer.py
-│   ├── scheduler.py
-│   ├── checkpoint.py
-│   └── validation.py
-│
-├── inference/
-│   ├── generate.py
-│   └── chat.py
-│
-├── utils/
-│
-├── checkpoints/
-│
-├── train.py
-├── inference.py
-└── requirements.txt
+Tamil
+English
+Tanglish
+Programming Code
+Mathematical Symbols
+Scientific Terms
 ```
 
----
-
-# ⚙️ Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/yourusername/QualcLM.git
-
-cd QualcLM
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# 🏋️ Training
-
-Start model training:
-
-```bash
-python train.py
-```
-
-Training features:
-
-- Gradient Accumulation
-- Mixed Precision Training
-- Checkpoint Saving
-- Resume Training
-- Validation Support
-- HuggingFace Model Export
-
----
-
-# 🔄 Training Pipeline
+Pipeline:
 
 ```
-Dataset
-   |
-   ▼
+Text Input
+
+      ↓
+
 Tokenizer
-   |
-   ▼
-DataLoader
-   |
-   ▼
-QualcLM Model
-   |
-   ▼
-Training Engine
-   |
-   ▼
-Checkpoint
-   |
-   ▼
-Fine-tuning
+
+      ↓
+
+Token IDs
+
+      ↓
+
+Transformer Model
+
+      ↓
+
+Generated Output
 ```
 
 ---
 
-# 💾 Checkpoint Management
+# 📚 Dataset Pipeline
 
-Model checkpoints are stored separately from source code.
+## Data Collection
 
-Recommended storage:
+Datasets will be collected from:
 
-- HuggingFace Model Hub
-- Cloud Storage
-- Local Storage
+- Open Source Datasets
+- Educational Content
+- Programming Resources
+- Scientific Documents
+- Public Knowledge Sources
 
-GitHub contains:
 
-✅ Source Code  
-✅ Configuration Files  
-✅ Documentation  
+## Data Cleaning
 
-GitHub does not contain:
+Cleaning process:
 
-❌ Large Datasets  
-❌ Model Weights  
-❌ Private Keys  
+- Remove Duplicate Data
+- Remove Corrupted Text
+- Unicode Normalization
+- Format Standardization
+- Quality Filtering
+
+
+## Data Processing
+
+Processed datasets will contain:
+
+- Training Data
+- Validation Data
+- Test Data
 
 ---
 
-# 🔧 Fine-Tuning Capability
+# 🏋️ Training Strategy
 
-QualcLM is designed for future domain-specific models.
+Qualc-LM follows a two-stage training approach.
 
-Possible specialized versions:
+## Stage 1: Base Language Model Training
 
 ```
-QualcLM-Code
-QualcLM-Math
-QualcLM-Science
-QualcLM-Education
-QualcLM-Assistant
+Large Mixed Dataset
+
+        ↓
+
+General Language Understanding
+
+        ↓
+
+Base Qualc-LM
+```
+
+
+## Stage 2: Domain Training
+
+```
+Base Model
+
+      ↓
+
+Domain Dataset
+
+      ↓
+
+Specialized Model
+```
+
+Possible Domain Models:
+
+```
+Qualc-General
+
+Qualc-Code
+
+Qualc-Math
+
+Qualc-Science
+
+Qualc-Tamil
 ```
 
 ---
 
-# 🛣️ Roadmap
+# 💾 Checkpoint System
 
-## Phase 1 - Core Framework
+Training checkpoints store:
 
-- [x] Transformer Architecture
-- [x] Attention Mechanism
-- [x] Training Engine Design
-- [x] Model Save / Load System
+- Model Weights
+- Optimizer State
+- Training Steps
+- Dataset Position
+- Loss Information
 
-## Phase 2 - Foundation Model
 
-- [ ] Custom Tokenizer
-- [ ] Dataset Preparation
-- [ ] 250M Parameter Pretraining
-- [ ] Model Evaluation
+Example:
 
-## Phase 3 - Domain Adaptation
+```
+checkpoint-001
 
-- [ ] Coding Fine-tuning
-- [ ] Mathematics Fine-tuning
-- [ ] Science Fine-tuning
-- [ ] Educational Assistant Training
+checkpoint-002
 
-## Phase 4 - Deployment
+checkpoint-003
+```
 
-- [ ] Chat Interface
-- [ ] API Server
-- [ ] Local Deployment
-- [ ] Mobile Integration
+Checkpoint system allows:
+
+- Resume Training
+- Long Training Management
+- Experiment Comparison
 
 ---
 
-# 🛠️ Technology Stack
+# ⚡ Training Optimization
 
-- Python
-- PyTorch
-- HuggingFace Transformers
-- SafeTensors
-- CUDA
-- Linux
+Supported techniques:
+
+- FP16 Training
+- BF16 Training
+- Gradient Accumulation
+- Multi GPU Training
+- Checkpoint Resume
+
+
+Target Hardware:
+
+- NVIDIA T4 GPU
+- Kaggle GPU
+- Google Colab GPU
 
 ---
 
-# 🤝 Contribution
+# 📊 Evaluation
 
-QualcLM is an open research project.
+Model evaluation includes:
 
-Suggestions, improvements, and contributions are welcome.
+- Training Loss
+- Validation Loss
+- Perplexity
+- Language Understanding
+- Domain Accuracy
+- Response Quality
+
+
+---
+
+# 🚀 Deployment
+
+Future deployment support:
+
+- HuggingFace Spaces
+- API Server
+- Web Applications
+- Mobile Applications
+
+
+---
+
+# 🛠️ Technologies Used
+
+```
+Python
+
+PyTorch
+
+Transformers
+
+HuggingFace
+
+CUDA
+
+Safetensors
+```
+
+---
+
+# 📌 Project Status
+
+Currently:
+
+```
+Phase 1:
+Pipeline Development
+
+Phase 2:
+Dataset Preparation
+
+Phase 3:
+Tokenizer Development
+
+Phase 4:
+Model Training
+
+Phase 5:
+Evaluation & Deployment
+```
 
 ---
 
 # 📜 License
 
-This project is intended for research and educational purposes.
+Apache License 2.0
+
 
 ---
 
-# 🧠 QualcLM
+# 👨‍💻 Author
 
-**Building a compact, customizable, and efficient language model.**
+Nandhakumar M.S
+
+Project:
+
+## Qualc-LM
+
+Building a custom multilingual AI system.
