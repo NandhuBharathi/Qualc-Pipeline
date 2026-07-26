@@ -44,14 +44,21 @@ class QualcTokenizer:
             ],
         )
 
-    def train(self, files):
+    def train(self, source, length=None):
 
         logger.info("Tokenizer Training Started")
 
-        self.tokenizer.train(
-            files=files,
-            trainer=self.trainer,
-        )
+        if isinstance(source, (str, list, tuple)):
+            self.tokenizer.train(
+                files=source,
+                trainer=self.trainer,
+            )
+        else:
+            self.tokenizer.train_from_iterator(
+                iterator=source,
+                trainer=self.trainer,
+                length=length,
+            )
 
         logger.info("Tokenizer Training Completed")
 
